@@ -3,8 +3,8 @@ body {
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 600px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 #signUp {
@@ -34,15 +34,13 @@ input:focus {
   height: 15px;
 }
 
-.nameContainer {
-  display: flex;
-  gap: 40px;
-}
-
+.nameContainer,
+.btnContainer,
 .passwordContainer {
   display: flex;
   gap: 40px;
 }
+
 .policyContainer {
   display: flex;
   align-items: center;
@@ -59,11 +57,6 @@ input:focus {
 }
 .policyText {
   flex: 4;
-}
-
-.btnContainer {
-  display: flex;
-  gap: 40px;
 }
 
 button {
@@ -106,4 +99,12 @@ button {
 .term {
   text-decoration: none;
   color: #4187c8;
+}
+
+@media (max-width: 768px) {
+  .nameContainer,
+  .btnContainer,
+  .passwordContainer {
+    display: block;
+  }
 }

@@ -32,11 +32,6 @@ input:focus {
 
 #checkBox {
   height: 15px;
-  border-radius: 0px;
-}
-
-#firstName {
-  display: inline;
 }
 
 .nameContainer {
@@ -90,12 +85,9 @@ button {
   background-color: #5ab45a;
 }
 
-#signInBtn:hover {
-  background-color: #5ab45ad2;
-}
-
+#signInBtn:hover,
 #registerBtn:hover {
-  background-color: #4187c8c1;
+  opacity: 0.8;
 }
 
 .registerSpan {

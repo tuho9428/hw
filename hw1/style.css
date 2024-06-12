@@ -25,7 +25,8 @@ input {
   padding-left: 20px;
 }
 
-input:focus {
+/* Apply focus styling to input fields except for checkboxes */
+input:not([type="checkbox"]):focus {
   outline: none;
   border-color: #4187c8;
   box-shadow: 0 0 7px #4187c8;

@@ -1,0 +1,128 @@
+:host, :root {
+  --rem: 20;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Center the container and limit its maximum width to 600px */
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+
+}
+
+#signUp {
+  text-align: center;
+}
+
+/* Styling for input fields */
+input {
+  width: 100%;
+  height: 60px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  font-size: large;
+  border: 1px solid #9c9b9b;
+  padding-block: 0px;
+  padding-inline: 0px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+/* Apply focus styling to input fields except for checkboxes */
+input:not([type="checkbox"]):focus {
+  outline: none;
+  border-color: #4187c8;
+  box-shadow: 0 0 7px #4187c8;
+}
+
+#checkBox {
+  height: 15px;
+}
+
+/* Flex layout for name, button, and password containers with a gap of 40px */
+.nameContainer,
+.btnContainer,
+.passwordContainer {
+  display: flex;
+  gap: 40px;
+}
+
+/* Flex layout for policy container with aligned items and a gap of 2px */
+.policyContainer {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Flex properties for the checkbox and its label */
+#checkBox {
+  flex: 0.1;
+  justify-content: flex-start;
+}
+
+#checkBoxLabel {
+  flex: 1;
+  font-weight: bold;
+}
+
+.policyText {
+  flex: 4;
+}
+
+/* Styling for buttons with transitions and hover effects */
+button {
+  width: 100%;
+  height: 60px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  color: white;
+  font-size: large;
+  border: none;
+  transition-duration: 0.4s;
+}
+
+#registerBtn {
+  background-color: #4187c8;
+}
+
+#signInBtn {
+  background-color: #5ab45a;
+}
+
+/* Hover effects for buttons to reduce opacity on hover */
+#signInBtn:hover,
+#registerBtn:hover {
+  opacity: 0.8;
+}
+
+/* Styling for the Register span element */
+.registerSpan {
+  display: inline-block;
+  width: 45px;
+  height: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  border-color: none;
+  color: white;
+  font-size: large;
+  background-color: #4187c8;
+  font-size: 0.7rem;
+}
+
+/* Styling for the Terms link */
+.term {
+  text-decoration: none;
+  color: #4187c8;
+}
+
+/* Media query for responsive design below a screen width of 768px */
+@media (max-width: 768px) {
+  .nameContainer,
+  .btnContainer,
+  .passwordContainer {
+    display: block;
+  }
+}

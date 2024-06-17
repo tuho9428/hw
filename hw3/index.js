@@ -11,10 +11,10 @@ personForm.addEventListener("submit",(e) =>{
     const newPerson = {
         id: uuidv4(),
         name: personNameInput.value,
-        age: personAgeInput.value,
+        age: Number(personAgeInput.value),
     };
     people.push(newPerson);
     localStorage.setItem("person", JSON.stringify(newPerson));
 
-    console.log("People:", people);
+    //console.log("People:", people);
 });

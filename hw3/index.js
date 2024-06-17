@@ -14,7 +14,7 @@ personForm.addEventListener("submit",(e) =>{
         age: Number(personAgeInput.value),
     };
     people.push(newPerson);
-    localStorage.setItem("person", JSON.stringify(newPerson));
+    localStorage.setItem("people", JSON.stringify(people));
 
-    //console.log("People:", people);
+    console.log("People:", people);
 });

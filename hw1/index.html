@@ -8,34 +8,96 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="signUp">Sign Up</h1>
-      <form action="" id="signUpForm">
-        <div class="nameContainer">
-          <input type="text" id="firstName" placeholder="First Name" required/>
-          <input type="text" id="lastName" placeholder="Last Name" required/>
-        </div>
-
-        <input type="tel" id="phone" placeholder="Mobile No." />
-        <input type="email" id="email" placeholder="Email Address" required/>
-        <div class="passwordContainer">
-          <input type="password" id="password" placeholder="Password" required/>
+      <h1 class="container__title" id="signup">Sign Up</h1>
+      <form class="form-signup" action="" id="signup-form">
+        <div class="form-signup__row">
           <input
-            type="password"
-            id="confirmPw"
-            placeholder="Confirm Password" required
+            type="text"
+            id="firstname"
+            class="form-signup__input"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            id="lastname"
+            class="form-signup__input"
+            placeholder="Last Name"
+            required
           />
         </div>
-        <div class="policyContainer">
-          <input type="checkbox" id="checkBox" required/>
-          <label id="checkBoxLabel" for="checkBox"> I Agree</label>
-          <p class="policyText">
-            By clicking <span class="registerSpan">Register</span>, you agree to the <a class="term" href="#">Terms and Conditions</a> set out
-            by this site, including our Cookie Use.
-          </p>
+        <div class="form-signup__row">
+          <input
+            type="tel"
+            id="phone"
+            class="form-signup__input"
+            placeholder="Mobile No."
+          />
         </div>
-        <div class="btnContainer">
-          <button id="registerBtn">Register</button>
-          <button id="signInBtn">Sign In</button>
+        <div class="form-signup__row">
+          <input
+            type="email"
+            id="email"
+            class="form-signup__input"
+            placeholder="Email Address"
+            required
+          />
+        </div>
+        <div class="form-signup__row">
+          <input
+            type="password"
+            id="password"
+            class="form-signup__input"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            id="confirm-password"
+            class="form-signup__input"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+        <div class="form-signup__row">
+          <div class="agree-wrapper">
+            <div class="check-agree">
+              <input
+                type="checkbox"
+                id="checkBox"
+                class="form-signup__row__checkbox"
+                required
+              />
+              <label
+                id="checkbox-label"
+                for="checkBox"
+                class="form-signup__row__label"
+              >
+                I Agree</label
+              >
+            </div>
+
+            <p class="form-signup__row__message">
+              By clicking
+              <span class="form-signup__row__badge-register">Register</span>,
+              you agree to the
+              <a class="form-signup__row__terms" href="#"
+                >Terms and Conditions</a
+              >
+              set out by this site, including our Cookie Use.
+            </p>
+          </div>
+        </div>
+        <div class="form-signup__row">
+            <button type="button"
+            class="btn btn--primary"
+            value="Register">Register</button>
+            <button
+              type="button"
+              class="btn btn--secondary"
+              value="Sign In">Sign In</button>
+            </button>
+          </div>
         </div>
       </form>
     </div>

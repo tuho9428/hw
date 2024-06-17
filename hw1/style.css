@@ -1,128 +1,133 @@
-:host, :root {
-  --rem: 20;
+:root {
+  --color-primary: #4187c8;
+  --color-secondary: #5ab45a;
+  --color-white: white;
+  --color-dark: #9c9b9b;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Center the container and limit its maximum width to 600px */
+.policy-container__label {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
 .container {
   margin: 0 auto;
-  max-width: 600px;
-
+  max-width: 50rem;
 }
 
-#signUp {
-  text-align: center;
-}
-
-/* Styling for input fields */
-input {
-  width: 100%;
-  height: 60px;
-  margin: 5px 0px;
-  border-radius: 5px;
-  font-size: large;
-  border: 1px solid #9c9b9b;
-  padding-block: 0px;
-  padding-inline: 0px;
-  padding-left: 20px;
-  box-sizing: border-box;
-}
-
-/* Apply focus styling to input fields except for checkboxes */
-input:not([type="checkbox"]):focus {
-  outline: none;
-  border-color: #4187c8;
-  box-shadow: 0 0 7px #4187c8;
-}
-
-#checkBox {
-  height: 15px;
-}
-
-/* Flex layout for name, button, and password containers with a gap of 40px */
-.nameContainer,
-.btnContainer,
-.passwordContainer {
-  display: flex;
-  gap: 40px;
-}
-
-/* Flex layout for policy container with aligned items and a gap of 2px */
-.policyContainer {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-/* Flex properties for the checkbox and its label */
-#checkBox {
-  flex: 0.1;
-  justify-content: flex-start;
-}
-
-#checkBoxLabel {
-  flex: 1;
-  font-weight: bold;
-}
-
-.policyText {
-  flex: 4;
-}
-
-/* Styling for buttons with transitions and hover effects */
-button {
-  width: 100%;
-  height: 60px;
-  margin: 5px 0px;
-  border-radius: 5px;
-  color: white;
-  font-size: large;
+.btn {
   border: none;
+  background-color: var(--color-dark);
+  outline: none;
+  width: 100%;
+  height: 3rem;
+  margin: 5px 0px;
+  border-radius: 5px;
+  font-size: large;
   transition-duration: 0.4s;
+
 }
 
-#registerBtn {
-  background-color: #4187c8;
-}
-
-#signInBtn {
-  background-color: #5ab45a;
-}
-
-/* Hover effects for buttons to reduce opacity on hover */
-#signInBtn:hover,
-#registerBtn:hover {
+.btn:hover {
   opacity: 0.8;
 }
 
-/* Styling for the Register span element */
-.registerSpan {
-  display: inline-block;
-  width: 45px;
-  height: 10px;
-  padding: 7px;
+.btn--primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.btn--secondary {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+.container__title {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.form-signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-signup .form-signup__row {
+  display: flex;
+  flex: 1 1 100%;
+  margin: 1px;
+}
+
+.form-signup .form-signup__row .form-signup__input,
+.form-signup button
+ {
+  flex: 1 1 100%;
+  margin: 0.5rem 1rem;
+}
+
+.form-signup__row .form-signup__input{
+  padding: 1rem;
+  width: 100%;
   border-radius: 5px;
-  border-color: none;
-  color: white;
-  font-size: large;
-  background-color: #4187c8;
-  font-size: 0.7rem;
+  border: 1px solid var(--color-dark);
+  outline: none;
 }
 
-/* Styling for the Terms link */
-.term {
+
+
+.form-signup__input input:focus {
+  box-shadow: 0 0 2px 1px var(--color-primary);
+}
+
+.form-signup__row .agree-wrapper {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.agree-wrapper {
+  display: flex;
+  margin: 0.5rem 1rem;
+}
+
+.form-signup__row .check-agree{
+  flex:1 1 40%;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 2.5rem; 
+  min-width: 2rem;
+}
+
+.form-signup__row .form-signup__row__message{
+  font-size: 1.2rem;
+}
+
+.form-signup__row .form-signup__row__message a {
   text-decoration: none;
-  color: #4187c8;
 }
 
-/* Media query for responsive design below a screen width of 768px */
-@media (max-width: 768px) {
-  .nameContainer,
-  .btnContainer,
-  .passwordContainer {
-    display: block;
-  }
+.form-signup__row .form-signup__row__message .form-signup__row__badge-register {
+  background-color: var(--color-primary);
+  display: inline-block;
+  color: var(--color-white);
+  padding: 1px 4px;
+  border-radius: 3px;
 }
+
+

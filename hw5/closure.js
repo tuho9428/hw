@@ -7,7 +7,11 @@
 // console.log(sayHello("Alice"));  // Outputs: "Hello Alice"
 // const sayHi = createGreeting("Hi");
 // console.log(sayHi("Bob"));  // Outputs: "Hi Bob"
-export function createGreeting(greeting) {}
+export function createGreeting(greeting) {
+    return (name) => {
+        return `${greeting} ${name}`;
+    };
+};
 
 // Exercise 2: Counter
 // Write a function createCounter() that initializes a counter to 0 and returns an object with two methods:
@@ -19,7 +23,22 @@ export function createGreeting(greeting) {}
 // console.log(counter.increment());  // Outputs: 1
 // console.log(counter.increment());  // Outputs: 2
 // console.log(counter.getValue());  // Outputs: 2
-export function createCounter() {}
+export function createCounter() {
+    let counter = 0;
+
+    function increment(amount=1){
+        counter+=amount;
+        return counter;
+    } 
+    function getValue(){
+        return counter;
+    } 
+
+    return {
+        increment,
+        getValue,
+    };
+};
 
 // Exercise 3: Function Store
 // Create a function functionStore() that allows you to store and retrieve functions by a key.
@@ -31,7 +50,16 @@ export function createCounter() {}
 // let store = functionStore();
 // store.store("add", (a, b) => a + b);
 // console.log(store.run("add", 5, 7)); // Outputs: 12
-export function functionStore() {}
+export function functionStore() {
+    return {
+        store(key, fn){
+
+        },
+        run(key, ...args){
+            return store(key, ...args);
+        }
+    }
+}
 
 // Exercise 4: Private Variables
 // Write a function createPerson(name) that creates private variables and provides methods

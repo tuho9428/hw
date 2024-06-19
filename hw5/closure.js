@@ -102,7 +102,19 @@ export function createPerson(name) {
 // limitedHello(); // Outputs: "Hello!"
 // limitedHello(); // No output, subsequent calls are ignored
 
-export function createLimitedCallFunction(fn, limit) {}
+export function createLimitedCallFunction(fn, limit) {
+    let counter = 0;
+    return (...args) => {
+        if (counter < limit){
+            counter++;
+            fn(...args);
+
+        } else{
+            return
+        };
+
+    };
+};
 
 // Exercise 6: Rate Limiter
 // Implement a function createRateLimiter(limit, interval) that limits how often a
@@ -120,4 +132,26 @@ export function createLimitedCallFunction(fn, limit) {}
 // limitedLog("World"); // "World" is logged
 // limitedLog("Again"); // This call is ignored
 
-export function createRateLimiter(fn, limit, interval) {}
+export function createRateLimiter(fn, limit, interval) {
+    let counter = 0;
+    let firstTimeCall = 0;
+    return (...args) => {
+        const timeCall = Date.now();
+        if (firstTimeCall === 0){
+            firstTimeCall = timeCall;
+        };
+        if (timeCall - firstTimeCall >= interval){
+            firstTimeCall = timeCall;
+            counter = 0;
+        };
+        if(counter < limit){
+            counter++;
+            return fn(...args);
+        }
+        else{
+            return
+        };
+
+    };
+
+}

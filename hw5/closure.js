@@ -51,13 +51,16 @@ export function createCounter() {
 // store.store("add", (a, b) => a + b);
 // console.log(store.run("add", 5, 7)); // Outputs: 12
 export function functionStore() {
+    const store = {};
     return {
         store(key, fn){
+            store[key] = fn;
 
         },
         run(key, ...args){
-            return store(key, ...args);
-        }
+            const fn = store[key];
+            return fn(...args);
+        },
     }
 }
 
@@ -70,7 +73,18 @@ export function functionStore() {
 // console.log(person.getName());  // Outputs: "Alice"
 // person.setName("Bob");
 // console.log(person.getName());  // Outputs: "Bob"
-export function createPerson(name) {}
+export function createPerson(name) {
+    return {
+        getName(){
+            return name;
+
+        },
+        setName(newName){
+            name = newName;
+        },
+    }
+}
+
 
 // Exercise 5: Limited Call Function
 // Description: Write a function createLimitedCallFunction(fn, limit) that

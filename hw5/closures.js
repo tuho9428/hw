@@ -134,13 +134,24 @@ export function createLimitedCallFunction(fn, limit) {
 
 export function createRateLimiter(fn, limit, interval) {
     let counter = 0;
-    return function (...args) {
-      if (counter < limit) {
-        counter++;
-        setTimeout(() => {
-          fn(...args);
-        }, interval);
-      }
+    let firstTimeCall = 0;
+    return (...args) => {
+        const timeCall = Date.now();
+        if (firstTimeCall === 0){
+            firstTimeCall = timeCall;
+        };
+        if (timeCall - firstTimeCall >= interval){
+            firstTimeCall = timeCall;
+            counter = 0;
+        };
+        if(counter < limit){
+            counter++;
+            return fn(...args);
+        }
+        else{
+            return
+        };
+
     };
 
 }

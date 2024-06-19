@@ -5,7 +5,7 @@ import {
     createPerson,
     createRateLimiter,
     functionStore,
-  } from "./closures.js";
+  } from "./closures";
   
   describe("closures", () => {
     describe("createGreeting", () => {
